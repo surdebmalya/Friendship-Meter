@@ -1,0 +1,20 @@
+{
+	"name" : "Friendship Meter",
+	"short_name" : "Friendship Meter",
+	"theme_color" : "#000000",
+	"background_color" : "#ffffff",
+	"orientation" : "portrait",
+	"scope" : "/",
+	"start_url" : "/",
+	"display" : "standalone",
+	"icons" : [
+		{
+			"src" : "android_icon.jpg",
+			"sizes" : "192x192"
+		},
+		{
+			"src" : "apple_icon.png",
+			"sizes" : "180x180"
+		}
+	]
+}

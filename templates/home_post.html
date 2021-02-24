@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	 crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="icon" type="image/jpg" href="{{ url_for('static', filename='android_icon.jpg') }}" sizes="192x192">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{{ url_for('static', filename='apple_icon.png') }}">
+
+	<title>Result | Friendship Meter</title>
+</head>
+
+<body style="font-family:Inter;">
+
+	<!-- Fixed navbar -->
+	<nav class="navbar sticky-top navbar-dark navbar-expand-lg bg-dark">
+		<a class="navbar-brand" href="#">
+			<img src="https://i.ibb.co/TghYR1P/hero-logo-squared-removebg.png" width="35" height="35" alt="" loading="lazy">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="/" tabindex="-1" aria-disabled="true">
+						Home
+					</a>
+				</li>
+				
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contact Me</a>
+					<div class="dropdown-menu">
+					<a class="dropdown-item" href="https://github.com/surdebmalya/" target="_blank"><i class="fa fa-github"></i> GitHub
+					</a>
+					<a class="dropdown-item" href="https://www.linkedin.com/in/debmalya-sur" target="_blank"><i class="fa fa-linkedin"></i> Linkedin</a>
+					</div>
+  				</li>
+			</ul>
+			<span class="navbar-text">
+				Version 1.0
+			</span>
+		</div>
+	</nav>
+
+	<br>
+	<div class="container">
+		<h1 style="text-align:center;">
+		Here Is Your Result
+		</h1>
+		<hr>
+	</div>
+
+	<div class="container" style="text-align:center; padding:8px;">
+		<!--
+		<button style="color: black; background-color: black;"><a href={{value}} target="_blank">-->
+			<input type="hidden" value={{value}} id="copy_link">
+			<img src={{value}} class="card-img-top" style="box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			
+		<!--</a></button>-->
+
+	
+		
+		<a type="button" onclick="myFunction()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="40px" height="40px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+		</svg></a>
+
+		<script>
+		function myFunction() {
+		var copyText = document.getElementById("copy_link");
+		// Making the type text first, then copied the value and then make it hidden.
+		copyText.type = 'text';
+		copyText.select();
+		document.execCommand("copy");
+		copyText.type = 'hidden';
+		alert("Link Copied 😄... Now you can share this result wherever you want!");
+		}
+		</script> 
+	
+	</div>
+
+	<!-- 
+	Run python script on click a button
+	https://stackoverflow.com/questions/48552343/how-can-i-execute-a-python-script-from-an-html-button#:~:text=To%20run%2C%20open%20command%20prompt,destination%20script%20file%20you%20created.
+	-->
+
+	<br>
+	<div class="container">
+	<div class="card border-danger" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+		<div class="card-body">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item" role="presentation">
+				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">📌 Important Note</a>
+			</li>
+			<li class="nav-item" role="presentation">
+				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#algo" role="tab" aria-controls="profile" aria-selected="false">Algorithm</a>
+			</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				If the result is showing below your expectation, don't be offended! Actually there is a pre-defined algorithm running constantly which is generating the result on basis of those names you have just entered, thus it's all about that algorithm 😊... We believe that there is the strongest bond between these two people 🤟. Go to the 2nd tab to see how it is working! 
+			</div>
+			<div class="tab-pane fade" id="algo" role="tabpanel" aria-labelledby="profile-tab">
+				Here we are using Flames algorithm. Firstly, we are taking those 2 names say <code>person_1</code> & <code>person_2</code> and making an ultimate string as <code>person_1</code> + " FRIENDS " + <code>person_2</code> and then we are counting the frequencies of the letters of that ultimate string. After doing so, we are adding up two extremas and storing the result, and we are repeating this process until we got a result less than or eqauls to 100! That's all 🤗... So, as a conclusion, it's just an algo, so don't worry about the result, just have a fun with this Progressive Web App (PWA) ✌️
+			</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!--Fixed Footer-->
+	<br>
+	<footer class="bg-light text-center text-lg-start">
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    		© 2021 Copyright:
+			Debmalya Sur | <a class="text-dark" href="/tnc">Terms & Condition</a> 
+		</div>
+	</footer>
+	<!--
+	<style>
+	.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	color: black;
+	text-align: center;
+	}
+	</style>
+
+	<div class="footer">
+	<p>© 2021 Copyright:
+		<a class="text-dark" href="https://www.linkedin.com/in/debmalya-sur/" target="_blank"> Debmalya Sur</a> | <a class="text-dark" href="/tnc">Terms & Condition</a>
+		</p>
+	</div>
+	-->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<a class="float" id="menu-share">
+	<i class="fa fa-share my-float"></i>
+	</a>
+
+	<script>
+		var shareButton = document.getElementById('menu-share');
+
+		shareButton.addEventListener('click', function () {
+
+			// Check if navigator.share is supported by the browser
+			if (navigator.share) {
+				console.log("Congrats! Your browser supports Web Share API")
+
+				// navigator.share accepts objects which must have atleast title, text or
+				// url. Any text or title or text is possible
+				navigator.share({
+						title: "Friendship Meter | Check the strength of your friendship",
+						text: "Wanna check the strength of your friendship? Friendship Meter is one of the coolest PWA (Progressive Web App) to check it, it is not only attractive but also its features are awesome. You must check it",
+						url: "https://friendship-calculator.surdebmalya11.repl.co"
+					})
+					.then(function () {
+						console.log("Shareing successfull")
+					})
+					.catch(function () {
+						console.log("Sharing failed")
+					})
+
+			} else {
+				console.log("Sorry! Your browser does not support Web Share API")
+				alert("Sorry! Your browser does not support Web Share API 😟... Please share the website by selecting the Home page link manually 😄");
+			}
+})
+	</script>
+
+	<style>
+	.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:15px;
+	right:15px;
+	background-color:#ffffff;
+	color:#000000;
+	border-radius:30px;
+	text-align:center;
+	box-shadow: 2px 2px 2px 3px #999;
+	z-index:1000;
+	animation: bot-to-top 2s ease-out;
+	}
+	.my-float{
+	font-size:24px;
+	margin-top:18px;
+	}
+
+	a#menu-share + ul{
+	visibility: hidden;
+	}
+
+	a#menu-share:hover + ul{
+	visibility: visible;
+	animation: scale-in 0.5s;
+	}
+
+	a#menu-share i{
+		animation: rotate-in 0.5s;
+	}
+
+	a#menu-share:hover > i{
+		animation: rotate-out 0.5s;
+	}
+
+	@keyframes bot-to-top {
+    0%   {bottom:-40px}
+    50%  {bottom:40px}
+	}
+
+	@keyframes scale-in {
+		from {transform: scale(0);opacity: 0;}
+		to {transform: scale(1);opacity: 1;}
+	}
+
+	@keyframes rotate-in {
+		from {transform: rotate(0deg);}
+		to {transform: rotate(360deg);}
+	}
+
+	@keyframes rotate-out {
+		from {transform: rotate(360deg);}
+		to {transform: rotate(0deg);}
+	}
+	</style>
+	
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </body>
+</html>
